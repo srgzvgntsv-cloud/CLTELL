@@ -6,12 +6,37 @@
 --------------------Configuration: CLTELL - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\Telpaxc\AppData\Local\Temp\RSP3FF4.tmp" with contents
+Creating temporary file "C:\Users\Telpaxc\AppData\Local\Temp\RSPA79B.tmp" with contents
 [
 /check:bounds /compile_only /dbglibs /debug:full /nologo /traceback /warn:argument_checking /warn:nofileopt /module:"Debug/" /object:"Debug/" /pdbfile:"Debug/DF60.PDB" 
-"D:\JOB\CLTELL\READ_CONFIG.f90"
+"D:\GitHub\CLTELL\MODULES.f90"
+"D:\GitHub\CLTELL\READ_SLD_GROUP_LINE.f90"
+"D:\GitHub\CLTELL\READ_CONFIG.f90"
+"D:\GitHub\CLTELL\LOAD_STAR_LINE.f90"
+"D:\GitHub\CLTELL\LOAD_OBSERVED.f90"
+"D:\GitHub\CLTELL\LINE_CORRECT.f90"
+"D:\GitHub\CLTELL\INIT_SLD.f90"
+"D:\GitHub\CLTELL\FORM_TELLURIC.f90"
+"D:\GitHub\CLTELL\FIND_INSTRUMENTAL.f90"
+"D:\GitHub\CLTELL\DEALLOCATE_ARRAY.f90"
+"D:\GitHub\CLTELL\DATA_MODULES.f90"
+"D:\GitHub\CLTELL\WATER_VAROP_CONT.f90"
+"D:\GitHub\CLTELL\vLINE_CORRECT.f90"
+"D:\GitHub\CLTELL\TELL_ABU_CORRECT.f90"
+"D:\GitHub\CLTELL\READ_HITRAN.f90"
+"D:\GitHub\CLTELL\RAYLEIGH_SCATTERING.f90"
+"D:\GitHub\CLTELL\MODEL_ATMOSPHERE.f90"
+"D:\GitHub\CLTELL\MERGING_LIST_LIN.f90"
+"D:\GitHub\CLTELL\MATH_SUBROUTIES.f90"
+"D:\GitHub\CLTELL\LINE_ABSORBTION.f90"
+"D:\GitHub\CLTELL\ILINE_CORRECT.f90"
+"D:\GitHub\CLTELL\GET_COEF_LAYER.f90"
+"D:\GitHub\CLTELL\FIND_RV.f90"
+"D:\GitHub\CLTELL\FBASE_PLINE.f90"
+"D:\GitHub\CLTELL\CONVOLVE.f90"
+"D:\GitHub\CLTELL\CLTELL.f90"
 ]
-Creating temporary file "C:\Users\Telpaxc\AppData\Local\Temp\RSP3FF5.tmp" with contents
+Creating temporary file "C:\Users\Telpaxc\AppData\Local\Temp\RSPA79C.tmp" with contents
 [
 kernel32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/CLTELL.pdb" /debug /machine:I386 /out:"Debug/CLTELL.exe" /pdbtype:sept 
 .\Debug\CLTELL.obj
@@ -42,10 +67,35 @@ kernel32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/CLTELL.pdb"
 .\Debug\WATER_VAROP_CONT.obj
 .\CXML.LIB
 ]
-Creating command line "link.exe @C:\Users\Telpaxc\AppData\Local\Temp\RSP3FF5.tmp"
+Creating command line "link.exe @C:\Users\Telpaxc\AppData\Local\Temp\RSPA79C.tmp"
 <h3>Output Window</h3>
 Compiling Fortran...
-D:\JOB\CLTELL\READ_CONFIG.f90
+D:\GitHub\CLTELL\MODULES.f90
+D:\GitHub\CLTELL\READ_SLD_GROUP_LINE.f90
+D:\GitHub\CLTELL\READ_CONFIG.f90
+D:\GitHub\CLTELL\LOAD_STAR_LINE.f90
+D:\GitHub\CLTELL\LOAD_OBSERVED.f90
+D:\GitHub\CLTELL\LINE_CORRECT.f90
+D:\GitHub\CLTELL\INIT_SLD.f90
+D:\GitHub\CLTELL\FORM_TELLURIC.f90
+D:\GitHub\CLTELL\FIND_INSTRUMENTAL.f90
+D:\GitHub\CLTELL\DEALLOCATE_ARRAY.f90
+D:\GitHub\CLTELL\DATA_MODULES.f90
+D:\GitHub\CLTELL\WATER_VAROP_CONT.f90
+D:\GitHub\CLTELL\vLINE_CORRECT.f90
+D:\GitHub\CLTELL\TELL_ABU_CORRECT.f90
+D:\GitHub\CLTELL\READ_HITRAN.f90
+D:\GitHub\CLTELL\RAYLEIGH_SCATTERING.f90
+D:\GitHub\CLTELL\MODEL_ATMOSPHERE.f90
+D:\GitHub\CLTELL\MERGING_LIST_LIN.f90
+D:\GitHub\CLTELL\MATH_SUBROUTIES.f90
+D:\GitHub\CLTELL\LINE_ABSORBTION.f90
+D:\GitHub\CLTELL\ILINE_CORRECT.f90
+D:\GitHub\CLTELL\GET_COEF_LAYER.f90
+D:\GitHub\CLTELL\FIND_RV.f90
+D:\GitHub\CLTELL\FBASE_PLINE.f90
+D:\GitHub\CLTELL\CONVOLVE.f90
+D:\GitHub\CLTELL\CLTELL.f90
 Linking...
 
 
