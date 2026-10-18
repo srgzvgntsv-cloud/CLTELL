@@ -6,6 +6,8 @@
 *.lo
 *.o
 *.obj
+*.pdb
+*.ilk
 
 # Precompiled Headers
 *.gch
@@ -24,9 +26,11 @@
 *.lai
 *.la
 *.a
-*.lib
 
 # Executables
-*.exe
 *.out
 *.app
+
+# Directory
+/Debug
+
