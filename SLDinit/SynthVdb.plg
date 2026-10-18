@@ -1,0 +1,42 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: SynthVdb - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\Telpaxc\AppData\Local\Temp\RSP85D7.tmp" with contents
+[
+kernel32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/SynthVdb.pdb" /debug /machine:I386 /out:"Debug/SynthVdb.exe" /pdbtype:sept 
+.\Debug\arrays_allocation.obj
+.\Debug\calculate_spectrum.obj
+.\Debug\continuum_opacity.obj
+.\Debug\data_modules.obj
+.\Debug\effective_depths.obj
+.\Debug\first_record.obj
+.\Debug\HeI_prof.obj
+.\Debug\Hydrogen.obj
+.\Debug\Josh.obj
+.\Debug\kapp.obj
+.\Debug\Lemkesdat.obj
+.\Debug\lines_opacity.obj
+.\Debug\load_model.obj
+.\Debug\Math_subroutines.obj
+.\Debug\modules.obj
+.\Debug\number_density.obj
+.\Debug\profiles.obj
+.\Debug\synthV_input.obj
+.\Debug\SynthVdb.obj
+]
+Creating command line "link.exe @C:\Users\Telpaxc\AppData\Local\Temp\RSP85D7.tmp"
+<h3>Output Window</h3>
+Linking...
+
+
+
+<h3>Results</h3>
+SynthVdb.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
