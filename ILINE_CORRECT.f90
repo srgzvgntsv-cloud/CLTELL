@@ -47,6 +47,8 @@ real(8) function iCORR_FUN(x,n)
  use CONSTANTS
  use MODELS
  use INSTRUMENT
+! use TELLURICA
+! use WATER_VAROP_CONT
  implicit none
  integer              :: n, i, j, e1, e2, p, ios
  real(8)              :: vw, ri, x, a
@@ -107,6 +109,9 @@ real(8) function iCORR_FUN(x,n)
  enddo
 
  tmodel = 1.d0 - exp(-tmodel)
+! do i = e1,e2
+!	tmodel(i-e1+1) = tmodel(i-e1+1) + water_cont_tau(i) + rayscat_cont_tau(i)
+! enddo
 
  no = e2-e1+1
  allocate(work(no))

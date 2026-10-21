@@ -147,6 +147,7 @@ subroutine INIT_CONFIG
 
  open(1,file='config.ini',status='old',iostat=ios)
    if(ios /= 0) then
+		corr_vel = 1
 		vmin = -3.d0; vmax = 3.d0
 		pmin = 1.d-3; pmax = 1.d3
 		iterations = 2
@@ -158,6 +159,7 @@ subroutine INIT_CONFIG
 		astep = 2000
    else
 		read(1,*) iterations
+		read(1,*) corr_vel
 		read(1,*) vmin
 		read(1,*) vmax
 		read(1,*) pmin

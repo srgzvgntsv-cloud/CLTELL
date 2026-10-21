@@ -5,8 +5,8 @@ subroutine LINE_ABSORBTION(mode,mode2,Jacobian)
  use MODELS
  use OBSERVED
  use INSTRUMENT
- use WATER_VAROP_CONT
- use TELLURICA
+! use WATER_VAROP_CONT
+! use TELLURICA
  implicit none
 
  integer :: j, i, k, l, il, u, ios
@@ -125,18 +125,18 @@ subroutine LINE_ABSORBTION(mode,mode2,Jacobian)
 	enddo
  endif
 
-! model = model + water_cont_tau + rayscat_cont_tau
-do i = 1,nobs
+ do i = 1,nobs
 	model(i) = 1.d0 - exp(-model(i))
+ !   model(i) = model(i) + water_cont_tau(i) + rayscat_cont_tau(i)
 	model_tmp(i) = model(i)
-enddo
+ enddo
 
  k = index(observed_names,'.',back=.true.)
 
  call INSTRUMENTAL('skip')
 
 ! if(lmode == 'grad' .and. lmode2 == 'fsld') then
-!    npar = size(Jacobian,2)
+!   npar = size(Jacobian,2)
 !    call INSTRUMENTAL_SLD_JACOBIAN(Jacobian,npar)
 ! endif
 
@@ -172,7 +172,5 @@ enddo
 		close(110+i)
 	enddo
  endif
-
-
 
 end subroutine LINE_ABSORBTION
