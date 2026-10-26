@@ -118,7 +118,6 @@ CLTELL reads **`SLD.config`** and **`config.ini`**. Keep both in the directory u
 ```text
 examples/                 ! Working directory
 vega_normalized.dat       ! Input spectrum filename
-none                      ! Height/relative-humidity file (none = unused)
 2 1                       ! Fitting mode and component selection
 6000.0 6400.0             ! Wavelength interval (Å)
 21                        ! v sin i star (km/s)
@@ -153,7 +152,6 @@ Set the number of groups according to the expected number of entries in the grou
 0.1          ! SLD profile step for telluric lines (km/s)
 0.01 0.0     ! Tikhonov regularization parameters
 0            ! Observatory altitude (m)
-2            ! Atmosphere model: 1 — equatorial day; 2 — night in mid‑latitudes; 3 — polar winter
 2000         ! Atmosphere grid height step (m)
 ```
 

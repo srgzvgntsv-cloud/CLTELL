@@ -20,11 +20,11 @@ subroutine READ_MODEL_EARLTH_ATMOSPHERE
  allocate(teff(nlayer), press(nlayer), abudance(9,nlayer), abudance_mol(9,nlayer))
  allocate(col(nlayer))
 
- call QINTER(height, temperature(nmodel,1:nold), nold, altitude, teff, nlayer)
- call QINTER(height, pressure(nmodel,1:nold), nold, altitude, press, nlayer)
+ call QINTER(height, temperature(1:nold), nold, altitude, teff, nlayer)
+ call QINTER(height, pressure(1:nold), nold, altitude, press, nlayer)
 
  do i = 1, 9
-	call QINTER(height, vmr(nmodel,i,1:nold), nold, altitude, abudance(i,1:nlayer), nlayer)
+	call QINTER(height, vmr(i,1:nold), nold, altitude, abudance(i,1:nlayer), nlayer)
  enddo
 
  do i = 1, nlayer

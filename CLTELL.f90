@@ -20,7 +20,7 @@ program CLTELL
 
  call READ_MODEL_EARLTH_ATMOSPHERE    ! Reading data from the earth's atmosphere model
 
- call READ_RELATIVE_HUMIDITY          ! Reading data from a relative humidity file
+ call INIT_RELATIVE_HUMIDITY               ! Reading data from a relative humidity file
 
 ! call REFRACTIVE_INDEX                ! Calculation of refractive index
 

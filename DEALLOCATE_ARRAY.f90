@@ -47,7 +47,7 @@ subroutine DEALLOCATE_ARRAY
  if(allocated(model))                   deallocate(model)                    ! module MODELS
  if(allocated(model_tmp))               deallocate(model_tmp)
 ! --------------------------------------------------------------------------------------------------
- nlayer = 0; nmodel = 0; astep = 0.d0; height0 = 0.d0
+ nlayer = 0; astep = 0.d0; height0 = 0.d0
  if(allocated(altitude))                deallocate(altitude)                 ! module TELLURICA
  if(allocated(teff))                    deallocate(teff)
  if(allocated(press))                   deallocate(press)

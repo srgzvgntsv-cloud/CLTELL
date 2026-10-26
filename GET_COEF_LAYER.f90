@@ -22,6 +22,7 @@ subroutine GET_ABSCOEF(wr)
 
  do i = 1, nlin_tell
 	wave_cm = 1.d8 / wave_center_tell(i) 
+
 	mol = get_id(imol(i))
 	Qref = PARTF(mol.id_molecule, mol.id_isotop, Tref)
 	denomT = 1.d0 - exp(-cl2*wave_cm*invTref)

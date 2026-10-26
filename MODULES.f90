@@ -3,7 +3,6 @@ module OBSERVED
 ! Paths / file names
  character(160) :: observed_names
  character(160) :: synth_path
- character(160) :: file_relative_humidity
  character(160) :: file_database_star
  character(160) :: file_info_database_star
  character(80), allocatable :: config_line(:)
@@ -104,7 +103,6 @@ module TELLURICA
  implicit none
 ! Atmospheric layering
  integer :: nlayer
- integer :: nmodel
  real(8) :: astep ! meters
  real(8) :: height0 ! meters
  real(8), allocatable :: altitude(:), teff(:), press(:)
@@ -155,7 +153,6 @@ subroutine INIT_CONFIG
 		step_tell = 1.d-1
 		regpar(1) = 0.01; regpar(2) = 0.0
 		height0 = 0
-		nmodel = 2
 		astep = 2000
    else
 		read(1,*) iterations
@@ -168,7 +165,6 @@ subroutine INIT_CONFIG
 		read(1,*) step_tell
 		read(1,*) regpar
 		read(1,*) height0
-		read(1,*) nmodel
 		read(1,*) astep
    endif
    close(1)

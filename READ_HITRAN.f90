@@ -16,7 +16,7 @@ subroutine READ_HITRAN
  real(8) :: wav
  logical :: keep
  real(8) :: depth
- real(8), parameter :: thr = 1.d-4
+ real(8), parameter :: thr = 1.d-30
 
  open(1, file='Hitran_database.par', status='old', iostat=ios)
  if(ios /= 0) stop 'file hitran_database.par not exist'
@@ -38,9 +38,6 @@ subroutine READ_HITRAN
 	if(ios /= 0) exit
 	molecule = get_id(im)
 	if(molecule.id_molecule == 0) cycle
-	if(molecule.name_molecule == 'CH4 ') cycle
-	if(molecule.name_molecule == 'CO2 ') cycle
-	if(ab <= 1.d-30) cycle
 	if(fr <= 0.d0) cycle
 	wav = 1.d8/fr
 	if(wav < wfirst) cycle
@@ -145,7 +142,7 @@ subroutine READ_HITRAN
 	if(abloc <= 0.d0) cycle
 	if(abloc2 <= 0.d0) cycle
 
-	nu_shift = nu0 ! + d_air*(press(j)/Pref)
+	nu_shift = nu0 + d_air*(press(j)/Pref)
 
 	Q_Q = PARTF(id_molecule, id_isotop, Tref) / PARTF(id_molecule, id_isotop, teff(j))
 	E_E = exp(-cl2*elow/teff(j)) / exp(-cl2*elow/Tref)

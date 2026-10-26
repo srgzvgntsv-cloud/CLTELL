@@ -15,11 +15,6 @@ subroutine READ_CONFIG ! Initialize input parameters
  k = index(observed_names,' '); observed_names = trim(adjustl(observed_names(1:k-1)))
  write(*,'("  File name spectra:      | ",a)')trim(adjustl(observed_names))
 
- read(1,'((a))') file_relative_humidity
- k = index(file_relative_humidity,' '); file_relative_humidity = trim(adjustl(file_relative_humidity(1:k-1)))
- write(*,'("  File relative humidity: | ",a)')trim(adjustl(file_relative_humidity))
- write(*,'("                          | ")')
-
  read(1,*) corr_mode, corr_target 
  if(corr_mode /= 0 .and. corr_mode /= 1 .and. corr_mode /= 2) stop 'Line correction parameters are set incorrectly'
  if(corr_target /= 0 .and. corr_target /= 1 .and. corr_target /= 2) stop 'Line correction parameters are set incorrectly'
@@ -51,10 +46,6 @@ subroutine READ_CONFIG ! Initialize input parameters
  write(string1,"(f5.2)") height0/1.d3
  write(*,'("  Observatory height:     | ",a," km")') trim(adjustl(string1)) 
  string1 = ''
-
- if(nmodel < 1 .or. nmodel > 3) stop 'Error: Atmosphere Model Number must be between 1 and 3'
- if(nmodel == 1)string = 'Equatorial diurnal'; if(nmodel == 2)string = 'Mean latitude night'; if(nmodel == 3)string = 'Polar winter'
- write(*,'("  Atmosphere Model:       | ",a)') trim(adjustl(string))
 
  if(astep <= 0 .or. astep > 120000) stop 'Error: The altitude step in the atmosphere must be greater than zero'
  write(string1,"(f5.2)") real(astep)/1.d3

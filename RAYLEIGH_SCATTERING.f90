@@ -1,7 +1,6 @@
-subroutine READ_RELATIVE_HUMIDITY
+subroutine INIT_RELATIVE_HUMIDITY
  use TELLURICA
  use CONSTANTS
- use OBSERVED, only : file_relative_humidity
  implicit none
  integer :: n, ios, i
  real(8) :: h, r
@@ -15,51 +14,7 @@ subroutine READ_RELATIVE_HUMIDITY
  if(allocated(relative_humidity)) deallocate(relative_humidity)
  allocate(relative_humidity(nlayer))
  relative_humidity = 0.d0
- open(9, file=file_relative_humidity, status='old', iostat=ios)
- if(ios == 0) then
-	n = 0
-	do
-		read(9,*,iostat=ios) h, r
-		if(ios > 0) cycle
-		if(ios == -1) exit
-		n = n + 1
-	enddo
-	if(n >= 2) then
-		rewind(9)
-		allocate(hr(n), rh(n))
-		n = 0
-		ios = 0
-		do
-			read(9,*,iostat=ios) h, r
-			if(ios > 0) cycle
-			if(ios == -1) exit
-			n = n + 1
-			hr(n) = h
-			rh(n) = r
-		enddo
-		rh(1) = rh(2)
-		call LINTER(hr, rh, n, altitude, relative_humidity, nlayer)
-		do i = 1, nlayer
-			RHpct = relative_humidity(i)
-			if(RHpct < 0.d0) RHpct = 0.d0
-			if(RHpct > 100.d0) RHpct = 100.d0
-			RHfrac = RHpct / 100.d0
-			expo = (7.5d0*teff(i) - 2048.625d0) / (teff(i) - 35.85d0)
-			Es_hPa = 6.1078d0 * exp(ln10*expo)
-			Es_Pa  = Es_hPa * 100.d0
-			Pw_Pa = RHfrac * Es_Pa
-			if(teff(i) > 0.d0) then
-				n_m3  = Pw_Pa / (kB * teff(i))
-				n_cm3 = n_m3 / 1.d6
-				abudance_mol(1,i) = n_cm3 * dz_cm
-			endif
-		enddo
-		deallocate(hr, rh)
-	endif
-	close(9)
- else
-	close(9)
- endif
+
  do i = 1, nlayer
 	expo = (7.5d0*teff(i) - 2048.625d0) / (teff(i) - 35.85d0)
 	Es_hPa = 6.1078d0 * exp(ln10*expo)
@@ -76,7 +31,7 @@ subroutine READ_RELATIVE_HUMIDITY
 	if(relative_humidity(i) > 100.d0) relative_humidity(i) = 100.d0
  enddo
 
-end subroutine READ_RELATIVE_HUMIDITY
+end subroutine INIT_RELATIVE_HUMIDITY
 
 
 
